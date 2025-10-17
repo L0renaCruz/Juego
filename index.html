@@ -1,10 +1,227 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicaciones Web Front End</title>
+    <title>Dragon Game</title>
 </head>
+
 <body>
+    <div class="container mt-2">
+        <h1 class="text-center">Dragon Game</h1>
+        <hr class="text-danger">
+        <div class="row justify-content-around" id="seleccion_personajes">
+            <div class="col-md-5" id="jugador1">
+                <div class="text-center mb-3">
+                    <div class="d-inline-flex align-items-center">
+                        <h4 class="mb-0 me-2" id="victoriasp1.1">Victorias P1</h4>
+                        <div class="btn btn-danger">
+                            <div id="victoriaspy1.1">0</div>
+                        </div>
+                    </div>
+                </div>
+                <input type="text" id="username_py1" class="form-control mb-3" placeholder="Player 1">
+                <div class="row mb-3" id="seleccion_personaje1">
+                    <div class="col-3">
+                        <button class="btn btn-danger rounded-circle">
+                            <img src="./public/img/seleccion/01.png" alt="personaje1" class="img-fluid mt-1 mb-1"
+                                title="Vegetto">
+                        </button>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-danger rounded-circle">
+                            <img src="./public/img/seleccion/03.png" alt="personaje2" class="img-fluid mt-1 mb-1"
+                                title="Trunks">
+                        </button>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-danger rounded-circle">
+                            <img src="./public/img/seleccion/05.png" alt="personaje3" class="img-fluid mt-1 mb-1"
+                                title="Goku">
+                        </button>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-danger rounded-circle">
+                            <img src="./public/img/seleccion/06.png" alt="personaje4" class="img-fluid mt-1 mb-1"
+                                title="Gohan">
+                        </button>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-danger rounded-circle">
+                            <img src="./public/img/seleccion/09.png" alt="personaje4" class="img-fluid mt-1 mb-1"
+                                title="Moro">
+                        </button>
+                    </div>
+                </div>
+                <button id="btn_py1" class="btn btn-danger w-100 mb-3">Aceptar</button>
+            </div>
+            <div class="col-md-5" id="jugador2">
+                <div class="text-center mb-3">
+                    <div class="d-inline-flex align-items-center">
+                        <h4 class="mb-0 me-2" id="victoriasp2">Victorias P2</h4>
+                        <div class="btn btn-primary">
+                            <div id="victoriaspy2.1">0</div>
+                        </div>
+                    </div>
+                </div>
+                <input type="text" id="username_py2" class="form-control mb-3" placeholder="Player 2">
+                <div class="row mb-3" id="seleccion_personaje2">
+                    <div class="col-3">
+                        <button class="btn btn-primary rounded-circle">
+                            <img src="./public/img/seleccion/02.png" alt="personaje1" class="img-fluid mt-1 mb-1"
+                                title="Vegeta">
+                        </button>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-primary rounded-circle">
+                            <img src="./public/img/seleccion/04.png" alt="personaje2" class="img-fluid mt-1 mb-1"
+                                title="Piccolo">
+                        </button>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-primary rounded-circle">
+                            <img src="./public/img/seleccion/07.png" alt="personaje3" class="img-fluid mt-1 mb-1"
+                                title="Gogetta">
+                        </button>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-primary rounded-circle">
+                            <img src="./public/img/seleccion/08.png" alt="personaje4" class="img-fluid mt-1 mb-1"
+                                title="Cell">
+                        </button>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-primary rounded-circle">
+                            <img src="./public/img/seleccion/10.png" alt="personaje4" class="img-fluid mt-1 mb-1"
+                                title="Black">
+                        </button>
+                    </div>
+                </div>
+                <button id="btn_py2" class="btn btn-primary w-100 mb-3">Aceptar</button>
+            </div>
+        </div>
+        <div class="row justify-content-around d-none" id="batalla">
+            <div class="col-md-5 text-center">
+                <h2 id="nombre_personaje1"></h2>
+                <p id="username1"></p>
+                <hr class="text-danger">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <div class="progress" aria-label="Example with label" aria-valuenow="100" aria-valuemin="0"
+                            aria-valuemax="100">
+                            <div id="vida1" class="progress-bar bg-success" role="progressbar" style="width: 100%">1000
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="progress" aria-label="Example with label" aria-valuenow="100" aria-valuemin="0"
+                            aria-valuemax="100">
+                            <div id="energia1" class="progress-bar" role="progressbar" style="width: 100%">1000</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="progress" aria-label="Example with label" aria-valuenow="100" aria-valuemin="0"
+                            aria-valuemax="100">
+                            <div id="ki1" class="progress-bar bg-warning" role="progressbar" style="width: 100%">1000
+                            </div>
+                        </div>
+                    </div>
+
+                    <img class="mx-auto" id="img_personaje1" src="" alt="">
+
+                </div>
+                <div class="d-flex align-items-center justify-content-center mb-3">
+                    <div class="botones-personaje">
+                        <div class="row gx-2 gy-2">
+                            <div class="col-6">
+                                <button id="btn_atk_basico1" class="btn btn-primary w-100">ATK Básico</button>
+                            </div>
+                            <div class="col-6">
+                                <button id="btn_atk_especial1" class="btn btn-danger w-100">ATK Especial</button>
+                            </div>
+                            <div class="col-6">
+                                <button id="btn_cargar1" class="btn btn-warning w-100">Cargar Ki</button>
+                            </div>
+                            <div class="col-6">
+                                <button id="btn_curar1" class="btn btn-success w-100">
+                                    Semilla Ermitaño
+                                    <div id="semillas1">3</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-2 align-self-center">
+                <div class="text-center mb-3">
+                    <h4 class="mb-3 me-2" id="victorias" >Victorias</h4>
+                    <div class="d-inline-flex align-items-center">
+                        <div class="btn btn-danger mb-0 me-2">
+                            <div id="victoriaspy1.2">0</div>
+                        </div>
+                        <div class="btn btn-primary">
+                            <div id="victoriaspy2.2">0</div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-center display-3" id="vs">VS</h2>
+            </div>
+            <div class="col-md-5 text-center">
+                <h2 id="nombre_personaje2"></h2>
+                <p id="username2"></p>
+                <hr class="text-danger">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <div class="progress" aria-label="Example with label" aria-valuenow="100" aria-valuemin="0"
+                            aria-valuemax="100">
+                            <div id="vida2" class="progress-bar bg-success" role="progressbar" style="width: 100%">1000
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="progress" aria-label="Example with label" aria-valuenow="100" aria-valuemin="0"
+                            aria-valuemax="100">
+                            <div id="energia2" class="progress-bar" role="progressbar" style="width: 100%">1000</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="progress" aria-label="Example with label" aria-valuenow="100" aria-valuemin="0"
+                            aria-valuemax="100">
+                            <div id="ki2" class="progress-bar bg-warning" role="progressbar" style="width: 100%">1000
+                            </div>
+                        </div>
+                    </div>
+
+                    <img class="mx-auto" id="img_personaje2" src="" alt="">
+
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                    <div class="botones-personaje">
+                        <div class="row gx-2 gy-2">
+                            <div class="col-6">
+                                <button id="btn_atk_basico2" class="btn btn-primary w-100">ATK Básico</button>
+                            </div>
+                            <div class="col-6">
+                                <button id="btn_atk_especial2" class="btn btn-danger w-100">ATK Especial</button>
+                            </div>
+                            <div class="col-6">
+                                <button id="btn_cargar2" class="btn btn-warning w-100">Cargar Ki</button>
+                            </div>
+                            <div class="col-6">
+                                <button id="btn_curar2" class="btn btn-success w-100">
+                                    Semilla Ermitaño
+                                    <div id="semillas2">3</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./bundle.js"></script>
 </body>
+
 </html>
